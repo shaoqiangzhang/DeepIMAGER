@@ -3,11 +3,17 @@ a suoervised deep learning model for predicting cell-type-specific gene regulato
 
 
 Code is tested using Python 3.8
+
 Runtime environment: 
+
 tensorflow              2.4.1
+
 tensorflow-gpu          2.4.1 
+
 numba                   0.51.2
+
 numpy                   1.23.5
+
 scikit-learn             1.2.2 
 
 ## STEP 1: Generate input for DeepIMAGER
