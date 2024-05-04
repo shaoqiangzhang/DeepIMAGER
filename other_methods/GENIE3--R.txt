@@ -1,0 +1,5 @@
+https://bioconductor.riken.jp/packages/release/bioc/vignettes/GENIE3/inst/doc/GENIE3.html#format-of-steady-state-expression-data
+
+Package GENIE3 1.24.0
+
+This is the documentation for the R implementation of GENIE3.
