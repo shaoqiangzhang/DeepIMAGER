@@ -1,0 +1,3 @@
+https://cran.r-project.org/
+
+Precompiled binary distributions of the base system and contributed packages, Windows and Mac users most likely want one of these versions of R
