@@ -44,3 +44,18 @@ TF_order_random: If the TF_num samller than the number of TFs in the pairs_for_p
 top_or_random: Decide how to select the neighbor images. Can be set as "top_cov","top_corr", "random"
 
 get_abs: Select neighbor images by considering top value or top absolute value.
+
+### #4  Command for each cell type:
+
+python3.8 generate_input_realdata.py -out_dir bonemarrow_representation -expr_file ../data_evaluation/bonemarrow/bone_marrow_cell.h5 -pairs_for_predict_file ../data_evaluation/bonemarrow/gold_standard_for_TFdivide -geneName_map_file ../data_evaluation/bonemarrow/sc_gene_list.txt -flag_load_from_h5 True -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/bonemarrow/whole_gold_split_pos -TF_num 13
+
+python3.8 generate_input_realdata.py -out_dir dendritic_representation -expr_file ../data_evaluation/dendritic/dendritic_cell.h5 -pairs_for_predict_file ../data_evaluation/dendritic/gold_standard_dendritic_whole.txt -geneName_map_file ../data_evaluation/dendritic/sc_gene_list.txt -flag_load_from_h5 True -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/dendritic/dendritic_divideTF_pos -TF_num 16
+
+python3.8 generate_input_realdata.py -out_dir hESC_representation -expr_file ../data_evaluation/single_cell_type/hESC/ExpressionData.csv -pairs_for_predict_file ../data_evaluation/single_cell_type/training_pairshESC.txt -geneName_map_file ../data_evaluation/single_cell_type/hESC_geneName_map.txt -flag_load_from_h5 False -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/single_cell_type/training_pairshESC.txtTF_divide_pos.txt -TF_num 18 -TF_order_random True
+
+python3.8 generate_input_realdata.py -out_dir mESC_2_representation -expr_file ../data_evaluation/single_cell_type/mESC/ExpressionData.csv -pairs_for_predict_file ../data_evaluation/single_cell_type/training_pairsmESC.txt -geneName_map_file ../data_evaluation/single_cell_type/mESC_geneName_map.txt -flag_load_from_h5 False -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/single_cell_type/training_pairsmESC.txtTF_divide_pos.txt -TF_num 18 -TF_order_random True
+
+ python3.8 generate_input_realdata.py -out_dir mHSC_GM_representation -expr_file ../data_evaluation/single_cell_type/mHSC-GM/ExpressionData.csv -pairs_for_predict_file ../data_evaluation/single_cell_type/training_pairsmHSC_GM.txt -geneName_map_file ../data_evaluation/single_cell_type/mHSC_GM_geneName_map.txt -flag_load_from_h5 False -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/single_cell_type/training_pairsmHSC_GM.txtTF_divide_pos.txt -TF_num 18 -TF_order_random True
+
+python3.8 generate_input_realdata.py -out_dir mHSC_L_representation -expr_file ../data_evaluation/single_cell_type/mHSC-L/ExpressionData.csv -pairs_for_predict_file ../data_evaluation/single_cell_type/training_pairsmHSC_L.txt -geneName_map_file ../data_evaluation/single_cell_type/mHSC_L_geneName_map.txt -flag_load_from_h5 False -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/single_cell_type/training_pairsmHSC_L.txtTF_divide_pos.txt -TF_num 18 -TF_order_random True
+
