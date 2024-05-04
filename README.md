@@ -59,3 +59,30 @@ python3.8 generate_input_realdata.py -out_dir mESC_2_representation -expr_file .
 
 python3.8 generate_input_realdata.py -out_dir mHSC_L_representation -expr_file ../data_evaluation/single_cell_type/mHSC-L/ExpressionData.csv -pairs_for_predict_file ../data_evaluation/single_cell_type/training_pairsmHSC_L.txt -geneName_map_file ../data_evaluation/single_cell_type/mHSC_L_geneName_map.txt -flag_load_from_h5 False -flag_load_split_batch_pos True -TF_divide_pos_file ../data_evaluation/single_cell_type/training_pairsmHSC_L.txtTF_divide_pos.txt -TF_num 18 -TF_order_random True
 
+## STEP 2: TF-aware three-fold Cross-validation for DeepIMAGER
+ 
+ Code: DeepIMAGER.py
+
+### #1 Input: the output of the STEP 1.
+
+### #2 Parameters:
+
+num_batches: Since in STEP 1, we divide training pairs by TFs, and representation for one TF is included in one batch. Here the num_batches should be the number of TF or the number of x file
+
+data_path: The path that includes x file, y file and z file, which is generated in the last step.
+
+output_dir: Indicate the path for output.
+
+cross_validation_fold_divide_file: A file that indicate how to divide the x file into three-fold. .
+
+to_predict: True or False. Default is False, then the code will do cross-validation evaluation. If set to True, we need to indicate weight_path for a trained model and the code will do prediction based on the trained model.
+
+weight_path: The path for a trained model.
+
+### #3 Command example:
+
+python3.8 DeepIMAGER.py -num_batches 13 -data_path bonemarrow_representation/version11/ -output_dir boneMarrow -cross_validation_fold_divide_file cross_validation_fold_divide.txt
+
+python3.8 DeepIMAGER.py -num_batches 18 -data_path mHSC_L_representation/version11/ -output_dir mHSC_L_test -cross_validation_fold_divide_file cross_validation_fold_divide.txt
+
+(You need to modify cross_validation_fold_divide.txt yourself)
