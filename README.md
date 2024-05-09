@@ -1,5 +1,5 @@
 # DeepIMAGER
-a supervised deep-learning model for predicting cell-specific gene regulatory networks from scRNA-seq and ChIP-seq data.
+A supervised deep-learning model for predicting cell-specific gene regulatory networks from scRNA-seq and ChIP-seq data.
 
 
 Code is tested using Python 3.8
